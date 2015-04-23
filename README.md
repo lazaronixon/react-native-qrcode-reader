@@ -57,7 +57,6 @@ var Index = React.createClass({
       title: 'QRCode',
       passProps: {
         onSucess: this._onSucess,
-        onCancel: this._onCancel,
       },
     });
   },
@@ -65,10 +64,6 @@ var Index = React.createClass({
   _onSucess: function(result) {
     console.log(result);
   },
-
-  _onCancel: function() {
-    console.log('Canceled!');
-  }
 
 });
 
