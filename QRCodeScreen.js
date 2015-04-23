@@ -33,7 +33,9 @@ var QRCodeScreen = React.createClass({
     var $this = this;
     requestAnimationFrame(function() {
       $this.props.navigator.pop();
-      $this.props.onCancel();
+      if ($this.props.onCancel) {
+        $this.props.onCancel();
+      }
     });
   },
 
