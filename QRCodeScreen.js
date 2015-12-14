@@ -25,7 +25,6 @@ var QRCodeScreen = React.createClass({
     return {
       cancelButtonVisible: false,
       cancelButtonTitle: 'Cancel',
-      barCodeFlag: true,
     };
   },
 
@@ -42,8 +41,8 @@ var QRCodeScreen = React.createClass({
   _onBarCodeRead: function(result) {
     var $this = this;
 
-    if (this.props.barCodeFlag) {
-      this.props.barCodeFlag = false;
+    if (this.barCodeFlag) {
+      this.barCodeFlag = false;
 
       setTimeout(function() {
         VibrationIOS.vibrate();
@@ -55,7 +54,8 @@ var QRCodeScreen = React.createClass({
 
   render: function() {
     var cancelButton = null;
-
+    this.barCodeFlag = true;
+    
     if (this.props.cancelButtonVisible) {
       cancelButton = <CancelButton onPress={this._onPressCancel} title={this.props.cancelButtonTitle} />;
     }
