@@ -10,7 +10,7 @@ var {
   VibrationIOS,
 } = React;
 
-var Camera = require('react-native-camera');
+import Camera from 'react-native-camera';
 
 var QRCodeScreen = React.createClass({
 
